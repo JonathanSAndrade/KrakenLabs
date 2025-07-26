@@ -29,3 +29,25 @@ serviceCards.forEach(card => {
     card.style.transition = 'opacity 0.5s, transform 0.5s';
     observer.observe(card);
 });
+// Efeito visual animado para todos os textos
+const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, td, th, a, span');
+
+textElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.7s, transform 0.7s';
+});
+
+const textObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+textElements.forEach(el => {
+    textObserver.observe(el);
+});

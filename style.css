@@ -6,6 +6,30 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.hero-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.5) blur(2px);
+    pointer-events: none;
+}
+
+.mask-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    /* Máscara radial para efeito de foco */
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
 body {
     background-color: #0A2463;
     color: #FFFFFF;
@@ -13,6 +37,52 @@ body {
 }
 
 /* Cabeçalho */
+
+/* Service List (SEO & Google) */
+.service-list {
+    margin: 2rem 0 3rem 0;
+    padding: 0;
+    list-style: none;
+    background-color: #F0F4FF;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(10,36,99,0.08);
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.service-list li {
+    padding: 1rem 1.5rem;
+    color: #0A2463;
+    font-size: 1rem;
+    border-bottom: 1px solid #E6ECFF;
+    transition: background 0.3s;
+}
+
+.service-list li:last-child {
+    border-bottom: none;
+}
+
+.service-list li:hover {
+    background-color: #FFD6FF;
+}
+
+h3 {
+    color: #FF6BFF;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+/* Responsive Service List */
+@media (max-width: 768px) {
+    .service-list {
+        max-width: 100%;
+        font-size: 0.98rem;
+    }
+    .service-list li {
+        padding: 1rem;
+    }
+}
 header {
     display: flex;
     justify-content: space-between;
@@ -58,6 +128,71 @@ nav a:hover {
     justify-content: space-between;
     padding: 8rem 5% 4rem;
     min-height: 100vh;
+}
+
+/* Service Table */
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3rem 0;
+    background-color: #F0F4FF;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(10,36,99,0.08);
+}
+
+.service-table th, .service-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+}
+
+.service-table th {
+    background-color: #FF6BFF;
+    color: #0A2463;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.service-table tr:nth-child(even) {
+    background-color: #E6ECFF;
+}
+
+.service-table tr:hover {
+    background-color: #FFD6FF;
+    transition: background 0.3s;
+}
+
+.service-table td {
+    color: #0A2463;
+    font-size: 1rem;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .service-table, .service-table thead, .service-table tbody, .service-table th, .service-table td, .service-table tr {
+        display: block;
+        width: 100%;
+    }
+    .service-table thead {
+        display: none;
+    }
+    .service-table tr {
+        margin-bottom: 1.5rem;
+        background: #F0F4FF;
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(10,36,99,0.05);
+    }
+    .service-table td {
+        padding: 1rem;
+        text-align: right;
+        position: relative;
+    }
+    .service-table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        color: #FF6BFF;
+    }
 }
 
 .hero-content {
@@ -158,3 +293,4 @@ footer {
         margin-top: 2rem;
     }
 }
+
