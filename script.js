@@ -1,5 +1,7 @@
+/*global document, IntersectionObserver */
+
 // Efeito de scroll suave para links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
@@ -15,7 +17,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const serviceCards = document.querySelectorAll('.service-card');
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
@@ -23,23 +25,24 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-serviceCards.forEach(card => {
+serviceCards.forEach((card) => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.5s, transform 0.5s';
     observer.observe(card);
 });
-// Efeito visual animado para todos os textos
+
+// Efeito visual animado para textos
 const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, td, th, a, span');
 
-textElements.forEach(el => {
+textElements.forEach((el) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.7s, transform 0.7s';
 });
 
 const textObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
@@ -48,6 +51,6 @@ const textObserver = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.1 });
 
-textElements.forEach(el => {
+textElements.forEach((el) => {
     textObserver.observe(el);
 });
