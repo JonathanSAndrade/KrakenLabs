@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .hero-video {
@@ -28,13 +28,15 @@
     z-index: -1;
     pointer-events: none;
     /* Máscara radial para efeito de foco */
+    background: -webkit-linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
     background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
 }
 
 body {
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #FFFFFF;
     line-height: 1.6;
+    background-color: #0A0A1A;
 }
 
 /* Cabeçalho */
@@ -56,7 +58,7 @@ body {
     color: #0A2463;
     font-size: 1rem;
     border-bottom: 1px solid #E6ECFF;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s; 
 }
 
 .service-list li:last-child {
@@ -107,8 +109,9 @@ header {
 .logo img {
     height: 40px;
 }
+
 .logo span {
-   
+
     color: #9D00FF;
     font-weight: bold;
 }
@@ -130,6 +133,32 @@ nav a:hover {
     color: #FF6BFF;
 }
 
+@-webkit-keyframes float {
+
+    /* Para Safari/Chrome antigos */
+    0%,
+    100% {
+        -webkit-transform: translateY(0);
+    }
+
+    50% {
+        -webkit-transform: translateY(-20px);
+    }
+}
+
+@keyframes float {
+
+    /* Padrão moderno */
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
 /* Hero Section */
 .hero {
     display: flex;
@@ -137,6 +166,7 @@ nav a:hover {
     justify-content: space-between;
     padding: 8rem 5% 4rem;
     min-height: 100vh;
+
 }
 
 /* Service Table */
@@ -180,12 +210,16 @@ nav a:hover {
 /* Responsive Table */
 @media (max-width: 768px) {
 
-    .service-table,
-    .service-table thead,
-    .service-table tbody,
-    .service-table th,
-    .service-table td,
+    .service-table {
+        display: block;
+    }
+
+    .service-table thead {
+        display: none;
+    }
+
     .service-table tr {
+        margin-bottom: 1.5rem;
         display: block;
         width: 100%;
     }
@@ -325,4 +359,5 @@ footer {
         max-width: 300px;
         margin-top: 2rem;
     }
+
 }
