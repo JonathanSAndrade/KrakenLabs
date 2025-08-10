@@ -37,6 +37,12 @@ body {
     color: #FFFFFF;
     line-height: 1.6;
     background-color: #0A0A1A;
+    color: #FFFFFF;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Evita cortes horizontais */
+    text-wrap: balance;
+    /* Melhora quebra de texto (suporte moderno) */
 }
 
 /* Cabeçalho */
@@ -58,7 +64,7 @@ body {
     color: #0A2463;
     font-size: 1rem;
     border-bottom: 1px solid #E6ECFF;
-    transition: background 0.3s, color 0.3s; 
+    transition: background 0.3s, color 0.3s;
 }
 
 .service-list li:last-child {
@@ -78,13 +84,14 @@ h3 {
 
 /* Responsive Service List */
 @media (max-width: 768px) {
-    .service-list {
-        max-width: 100%;
-        font-size: 0.98rem;
+      .service-table td {
+        padding: 0.5rem; /* Reduza o padding */
+        text-align: left; /* Alinhamento legível */
     }
-
-    .service-list li {
-        padding: 1rem;
+    .service-table td::before {
+        float: none; /* Remove float para evitar sobreposição */
+        display: block;
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -131,6 +138,32 @@ nav a {
 
 nav a:hover {
     color: #FF6BFF;
+}
+
+@-webkit-keyframes float {
+
+    /* Para Safari/Chrome antigos */
+    0%,
+    100% {
+        -webkit-transform: translateY(0);
+    }
+
+    50% {
+        -webkit-transform: translateY(-20px);
+    }
+}
+
+@keyframes float {
+
+    /* Padrão moderno */
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 @-webkit-keyframes float {
@@ -257,6 +290,12 @@ nav a:hover {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: #00F5E9;
+
+
+    font-size: 2rem;
+    /* Reduza o tamanho */
+    line-height: 1.2;
+    /* Ajuste espaçamento */
 }
 
 .hero p {
@@ -287,7 +326,11 @@ nav a:hover {
 
 .hero-image img {
     max-width: 500px;
+    -webkit-animation: float 6s ease-in-out infinite;
     animation: float 6s ease-in-out infinite;
+    @media (max-width: 768px) {
+        max-width: 250px; /* Tamanho menor em mobile */
+    }
 }
 
 @keyframes float {
@@ -320,6 +363,12 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        /* Uma coluna */
+        gap: 1rem;
+    }
 }
 
 .service-card {
@@ -328,6 +377,12 @@ nav a:hover {
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s;
+    min-height: 300px;
+    /* Altura mínima consistente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza conteúdo */
 }
 
 .service-card:hover {
