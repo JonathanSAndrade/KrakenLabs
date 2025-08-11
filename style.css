@@ -1,10 +1,8 @@
 /* Reset e Fontes */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 .hero-video {
@@ -27,76 +25,37 @@
     height: 100vh;
     z-index: -1;
     pointer-events: none;
-    /* Máscara radial para efeito de foco */
     background: -webkit-linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
     background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    ;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #FFFFFF;
+    color: #00FFFF;
+    /* Ciano Neon */
     line-height: 1.6;
-    background-color: #0A0A1A;
+    background-color: #000000;
+    /* Preto */
+    min-height: 100vh;
+    overflow-x: hidden;
+    text-wrap: balance;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
 }
 
 /* Cabeçalho */
-
-/* Service List (SEO & Google) */
-.service-list {
-    margin: 2rem 0 3rem 0;
-    padding: 0;
-    list-style: none;
-    background-color: #F0F4FF;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(10, 36, 99, 0.08);
-    max-width: 600px;
-    overflow: hidden;
-}
-
-.service-list li {
-    padding: 1rem 1.5rem;
-    color: #0A2463;
-    font-size: 1rem;
-    border-bottom: 1px solid #E6ECFF;
-    transition: background 0.3s, color 0.3s; 
-}
-
-.service-list li:last-child {
-    border-bottom: none;
-}
-
-.service-list li:hover {
-    background-color: #FFD6FF;
-}
-
-h3 {
-    color: #00FFFF;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-}
-
-/* Responsive Service List */
-@media (max-width: 768px) {
-    .service-list {
-        max-width: 100%;
-        font-size: 0.98rem;
-    }
-
-    .service-list li {
-        padding: 1rem;
-    }
-}
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-
     position: fixed;
     width: 100%;
     z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    
+    /* Rosa Choque */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
 }
 
 .logo {
@@ -105,15 +64,16 @@ header {
     gap: 10px;
 }
 
-
 .logo img {
-    height: 40px;
+    height: 50px;
+
 }
 
 .logo span {
-
-    color: #9D00FF;
+    color: #00FFFF;
+    /* Rosa Choque */
     font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
 }
 
 nav ul {
@@ -123,40 +83,22 @@ nav ul {
 }
 
 nav a {
-    color: #9D00FF;
+    color: #00FFFF;
+    /* Ciano Neon */
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: all 0.3s;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
 }
 
 nav a:hover {
-    color: #FF6BFF;
-}
-
-@-webkit-keyframes float {
-
-    /* Para Safari/Chrome antigos */
-    0%,
-    100% {
-        -webkit-transform: translateY(0);
-    }
-
-    50% {
-        -webkit-transform: translateY(-20px);
-    }
-}
-
-@keyframes float {
-
-    /* Padrão moderno */
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
+    color: #FF00FF;
+    /* Rosa Choque */
+    background-color: rgba(0, 255, 255, 0.1);
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
 }
 
 /* Hero Section */
@@ -164,89 +106,8 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8rem 5% 4rem;
+    padding: 10rem 5% 4rem;
     min-height: 100vh;
-
-}
-
-/* Service Table */
-.service-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 3rem 0;
-    background-color: #F0F4FF;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(10, 36, 99, 0.08);
-}
-
-.service-table th,
-.service-table td {
-    padding: 1rem 1.5rem;
-    text-align: left;
-}
-
-.service-table th {
-    background-color: #FF6BFF;
-    color: #0A2463;
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.service-table tr:nth-child(even) {
-    background-color: #E6ECFF;
-}
-
-.service-table tr:hover {
-    background-color: #FFD6FF;
-    transition: background 0.3s;
-}
-
-.service-table td {
-    color: #0A2463;
-    font-size: 1rem;
-}
-
-/* Responsive Table */
-@media (max-width: 768px) {
-
-    .service-table {
-        display: block;
-    }
-
-    .service-table thead {
-        display: none;
-    }
-
-    .service-table tr {
-        margin-bottom: 1.5rem;
-        display: block;
-        width: 100%;
-    }
-
-    .service-table thead {
-        display: none;
-    }
-
-    .service-table tr {
-        margin-bottom: 1.5rem;
-        background: #F0F4FF;
-        border-radius: 8px;
-        box-shadow: 0 1px 4px rgba(10, 36, 99, 0.05);
-    }
-
-    .service-table td {
-        padding: 1rem;
-        text-align: right;
-        position: relative;
-    }
-
-    .service-table td::before {
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
-        color: #FF6BFF;
-    }
 }
 
 .hero-content {
@@ -256,13 +117,17 @@ nav a:hover {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #00F5E9;
+    color: #00FFFF;;
+    /* Verde Limão */
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+    
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: #FFFFFF;
+    color: #00FFFF;
+    /* Ciano Neon */
 }
 
 .cta-button {
@@ -271,23 +136,31 @@ nav a:hover {
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
-    transition: transform 0.3s;
-    background: #9D00FF;
-    border: 1px solid #00F5E9;
-    box-shadow: 0 0 15px #FF00FF;
-    color: white;
     transition: all 0.3s;
+    background: rgba(255, 0, 255, 0.2);
+    /* Rosa Choque com transparência */
+    border: 1px solid #00FFFF;
+    /* Ciano Neon */
+    box-shadow: 0 0 15px #FF00FF, inset 0 0 10px rgba(255, 0, 255, 0.5);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .cta-button:hover {
     transform: scale(1.05);
-    background: #FF00FF;
-    box-shadow: 0 0 25px #00FFFF;
+    background: rgba(0, 255, 255, 0.2);
+    /* Ciano Neon com transparência */
+    box-shadow: 0 0 25px #00FFFF, inset 0 0 15px rgba(0, 255, 255, 0.5);
+    color: #00FF00;
+    /* Verde Limão */
 }
 
 .hero-image img {
     max-width: 500px;
     animation: float 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px #FF00FF) hue-rotate(-5deg);
 }
 
 @keyframes float {
@@ -305,15 +178,18 @@ nav a:hover {
 /* Serviços */
 .services {
     padding: 5rem 5%;
-    background-color: #0A0A1A;
-    color: #0A2463;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 1px solid #00FFFF;
+    border-bottom: 1px solid #FF00FF;
 }
 
 .services h2 {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2.5rem;
-    color: #0066FF;
+    color: #FF00FF;
+    /* Rosa Choque */
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
 }
 
 .services-grid {
@@ -323,41 +199,174 @@ nav a:hover {
 }
 
 .service-card {
-    background-color: #12122D;
+    background: rgba(0, 0, 0, 0.8);
     padding: 2rem;
     border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: all 0.3s;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #00FF00;
+    /* Verde Limão */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
 }
 
 .service-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    border-color: #00FFFF;
+    /* Ciano Neon */
 }
 
 .service-card i {
     font-size: 3rem;
-    color: #FF6BFF;
+    color: #00FF00;
+    /* Verde Limão */
     margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.service-card h3 {
+    color: #FF00FF;
+    /* Rosa Choque */
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.service-card p {
+    color: #00FFFF;
+    /* Ciano Neon */
+}
+
+/* Service List */
+.service-list {
+    margin: 2rem 0 3rem 0;
+    padding: 0;
+    list-style: none;
+    background-color: rgba(0, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    max-width: 600px;
+    overflow: hidden;
+    border: 1px solid #00FFFF;
+}
+
+.service-list li {
+    padding: 1rem 1.5rem;
+    color: #00FFFF;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 0, 255, 0.3);
+    transition: all 0.3s;
+}
+
+.service-list li:last-child {
+    border-bottom: none;
+}
+
+.service-list li:hover {
+    background-color: rgba(255, 0, 255, 0.2);
+    color: #00FF00;
+}
+
+/* Service Table */
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3rem 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+    border: 1px solid #00FF00;
+}
+
+.service-table th,
+.service-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+}
+
+.service-table th {
+    background-color: rgba(0, 255, 255, 0.2);
+    color: #00FFFF;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.service-table tr:nth-child(even) {
+    background-color: rgba(255, 0, 255, 0.1);
+}
+
+.service-table tr:hover {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #FF00FF;
+}
+
+.service-table td {
+    color: #00FFFF;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 8rem;
+    }
+
+    .hero-image img {
+        max-width: 250px;
+        margin-top: 2rem;
+    }
+
+    .service-table {
+        display: block;
+    }
+
+    .service-table thead {
+        display: none;
+    }
+
+    .service-table tr {
+        margin-bottom: 1.5rem;
+        display: block;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+
+    .service-table td {
+        padding: 1rem;
+        text-align: right;
+        position: relative;
+    }
+
+    .service-table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        color: #FF00FF;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
 }
 
 /* Rodapé */
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #0A0A1A;
-    color: #FFFFFF;
+    background-color: #000000;
+    color: #00FFFF;
+    border-top: 1px solid #FF00FF;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-image img {
-        max-width: 300px;
-        margin-top: 2rem;
-    }
-
+footer p {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
 }
