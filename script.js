@@ -1,5 +1,3 @@
-/*global document, IntersectionObserver */
-
 // Efeito de scroll suave para links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
@@ -12,9 +10,9 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         }
     });
 });
-// Animação de cards ao aparecer na tela
-const serviceCards = document.querySelectorAll('.service-card');
 
+// Animação de cards ao aparecer na tela
+const serviceCards = document.querySelectorAll('.service-card, .portfolio-item, .stat-item');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -23,15 +21,16 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, { threshold: 0.1 });
+
 serviceCards.forEach((card) => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.5s, transform 0.5s';
     observer.observe(card);
 });
-// Efeito visual animado para textos
-const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, td, th, a, span');
 
+// Efeito visual animado para textos
+const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, span:not(.logo span)');
 textElements.forEach((el) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
@@ -51,3 +50,5 @@ const textObserver = new IntersectionObserver((entries, observer) => {
 textElements.forEach((el) => {
     textObserver.observe(el);
 });
+/*
+*/
