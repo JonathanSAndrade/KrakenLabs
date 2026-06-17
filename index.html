@@ -4,20 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:description" content="KrakenLabs: Criação de sites, SEO, Marketing Digital e soluções em tecnologia">
+    <meta property="og:description"
+        content="KrakenLabs: Criação de sites, SEO, Marketing Digital e soluções em tecnologia">
     <meta property="author" content="KrakenLabs">
-    <title>KrakenLabs - Domínios digitais poderosos</title>
+    <title>KrakenLabs - Engenharia Web do Futuro</title>
+    <!-- Fontes modernas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/android-chrome-512x512.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/kraken-logo.png">
 </head>
 
 <body>
+    <!-- Grid de fundo sutil -->
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <!-- HEADER -->
     <header>
         <div class="logo">
-            <img src="assets/logoFlutua.png" alt="KrakenLabs Logo">
+            <img src="assets/logoFlutua.png" alt="KrakenLabs - logotipo com polvo estilizado">
             <span>KrakenLabs</span>
         </div>
         <nav aria-label="Navegação principal">
@@ -31,24 +40,27 @@
     </header>
 
     <main>
+        <!-- HERO -->
         <section class="hero">
             <div class="hero-content">
-                <h1>Soluções Digitais que Impulsionam Seu Negócio</h1>
+                <span class="badge"><i class="fas fa-bolt" aria-hidden="true"></i> Futuro já disponível</span>
+                <h1>Soluções Digitais que <span class="highlight">Impulsionam</span> Seu Negócio</h1>
                 <p>Transformamos ideias em experiências digitais poderosas do primeiro clique ao resultado final, unimos
                     tecnologia e estratégia para gerar crescimento real e mensurável.</p>
                 <a href="#contact" class="cta-button">Fale Conosco</a>
             </div>
             <figure class="hero-image">
-                <img src="assets/logoFlutua.png" alt="Ilustração de polvo rosa tech">
+                <img src="assets/logoFlutua.png" alt="Ilustração de polvo rosa com estilo tecnológico, símbolo da KrakenLabs">
             </figure>
-            <video src="assets/Video1defundopunk.mp4" autoplay muted loop class="hero-video"></video>
+            <video src="assets/Video1defundopunk.mp4" autoplay muted loop playsinline preload="none" class="hero-video"></video>
             <div class="mask-box"></div>
         </section>
 
+        <!-- SERVIÇOS -->
         <section id="services" class="services">
-            <h2 class="section-title">Nossos Serviços</h2>
+            <h2 class="section-title">Nossos <span class="highlight">Serviços</span></h2>
             <div class="services-grid">
-                <article class="service-card">
+                <article class="service-card reveal">
                     <i class="fas fa-code" aria-hidden="true"></i>
                     <h3>Programação</h3>
                     <ul class="service-list">
@@ -59,7 +71,7 @@
                         <li>Hospedagem + Manutenção mensal</li>
                     </ul>
                 </article>
-                <article class="service-card">
+                <article class="service-card reveal">
                     <i class="fas fa-chart-line" aria-hidden="true"></i>
                     <h3>Otimização Digital (SEO & Google)</h3>
                     <ul class="service-list">
@@ -67,29 +79,18 @@
                         <li>Correção de erros de indexação</li>
                         <li>Migração de domínio sem perder posicionamento</li>
                         <li>Google Meu Negócio</li>
-                        <li>Atualização semanal de posts promocionais</li>
-                    </ul>
-                </article>
-                <article class="service-card">
-                    <i class="fas fa-share-alt" aria-hidden="true"></i>
-                    <h3>Gestão de Redes Sociais</h3>
-                    <ul class="service-list">
-                        <li>Gestão Completa do Instagram</li>
-                        <li>Stories com link para landing pages</li>
-                        <li>Análise de tráfego social → site</li>
-                        <li>Gestão de Tráfego Pago (Meta Ads + Google Ads)</li>
-                        <li>Gestão do Google Meu Negócio</li>
-                    </ul>
+                 
                 </article>
             </div>
         </section>
 
+        <!-- PORTFÓLIO -->
         <section id="portfolio" class="portfolio">
-            <h2 class="section-title">Nosso Portfólio</h2>
+            <h2 class="section-title">Nosso <span class="highlight">Portfólio</span></h2>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
+                <div class="portfolio-item reveal">
                     <div class="portfolio-img">
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
                     </div>
                     <div class="portfolio-info">
                         <h3>E-commerce Moderno</h3>
@@ -99,12 +100,12 @@
                             <span class="portfolio-tag">WooCommerce</span>
                             <span class="portfolio-tag">SEO</span>
                         </div>
-                        <a href="#" class="portfolio-link">Ver Projeto → em construção</a>
+                        <a href="#" class="portfolio-link">Ver Projeto →</a>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item reveal">
                     <div class="portfolio-img">
-                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                     </div>
                     <div class="portfolio-info">
                         <h3>App de Serviços</h3>
@@ -117,9 +118,9 @@
                         <a href="#" class="portfolio-link">Ver Projeto → em construção</a>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item reveal">
                     <div class="portfolio-img">
-                        <i class="fas fa-globe"></i>
+                        <i class="fas fa-globe" aria-hidden="true"></i>
                     </div>
                     <div class="portfolio-info">
                         <h3>Site Institucional</h3>
@@ -135,79 +136,89 @@
             </div>
         </section>
 
+        <!-- SOBRE -->
         <section id="about" class="about">
-            <h2 class="section-title">Sobre Nós</h2>
+            <h2 class="section-title">Sobre <span class="highlight">Nós</span></h2>
             <div class="about-content">
                 <div class="about-text">
                     <h3>Transformando ideias em realidade digital</h3>
-                    <p>A KrakenLabs nasceu da paixão por tecnologia e da vontade de ajudar empresas a crescerem no ambiente digital. Combinamos expertise técnica com visão estratégica para entregar soluções que realmente fazem a diferença.</p>
-                    <p>Nossa equipe é formada por profissionais especializados em desenvolvimento, design, marketing digital e análise de dados, sempre buscando as melhores tecnologias e metodologias para cada projeto.</p>
+                    <p>A KrakenLabs nasceu da paixão por tecnologia e da vontade de ajudar empresas a crescerem no
+                        ambiente digital. Combinamos expertise técnica com visão estratégica para entregar soluções que
+                        realmente fazem a diferença.</p>
+                    <p>Nossa equipe é formada por profissionais especializados em desenvolvimento, design, marketing
+                        digital e análise de dados, sempre buscando as melhores tecnologias e metodologias para cada
+                        projeto.</p>
                     <div class="about-stats">
-                        <div class="stat-item">
+                        <div class="stat-item reveal">
                             <div class="stat-number">5+</div>
                             <div class="stat-label">Projetos Entregues</div>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-item reveal">
                             <div class="stat-number">2+</div>
                             <div class="stat-label">Anos de Experiência</div>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-item reveal">
                             <div class="stat-number">100%</div>
                             <div class="stat-label">Clientes Satisfeitos</div>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-item reveal">
                             <div class="stat-number">5+</div>
                             <div class="stat-label">Especialistas</div>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="assets/logoFlutua.png" alt="Equipe KrakenLabs">
+                    <img src="assets/Jonathan.png" alt="Equipe KrakenLabs em ação">
                 </div>
             </div>
         </section>
 
+        <!-- CONTATO -->
         <section id="contact" class="contact">
-            <h2 class="section-title">Entre em Contato</h2>
+            <h2 class="section-title">Entre em <span class="highlight">Contato</span></h2>
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Vamos conversar sobre seu projeto?</h3>
-                    <p>Estamos prontos para transformar suas ideias em realidade. Entre em contato conosco e em breve retornaremos com uma proposta personalizada para suas necessidades.</p>
+                    <p>Estamos prontos para transformar suas ideias em realidade. Entre em contato conosco e em breve
+                        retornaremos com uma proposta personalizada para suas necessidades.</p>
                     <div class="contact-details">
                         <div class="contact-detail">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                             <span>Suzano, São Paulo - Brasil</span>
                         </div>
                         <div class="contact-detail">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-phone" aria-hidden="true"></i>
                             <span>+55 (11) 99155-3348</span>
                         </div>
                         <div class="contact-detail">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                             <span>contato@krakenlabs.com.br</span>
                         </div>
                         <div class="contact-detail">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock" aria-hidden="true"></i>
                             <span>Seg - Dom: 7h às 22h</span>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form id="contactForm" action="https://formsubmit.co/jhown.travolta@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://krakenlabstech.com.br">
+                        <input type="hidden" name="_template" value="table">
                         <div class="form-group">
-                            <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://krakenlabstech.com.br">
-    <input type="hidden" name="_template" value="table">
                             <label for="name">Nome Completo</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Seu nome completo" required>
+                            <input type="text" id="name" name="name" class="form-control"
+                                placeholder="Seu nome completo" required>
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="jhown.travolta@gmail.com" required>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="jhown.travolta@gmail.com" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Telefone</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(11) 99999-9999">
+                            <input type="tel" id="phone" name="phone" class="form-control"
+                                placeholder="(11) 99999-9999">
                         </div>
                         <div class="form-group">
                             <label for="service">Serviço de Interesse</label>
@@ -215,13 +226,14 @@
                                 <option value="">Selecione um serviço</option>
                                 <option value="programming">Programação</option>
                                 <option value="seo">Otimização Digital (SEO)</option>
-                                <option value="social-media">Gestão de Redes Sociais</option>
+                               
                                 <option value="other">Outro</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="message">Mensagem</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Descreva seu projeto ou dúvida..." required></textarea>
+                            <textarea id="message" name="message" class="form-control"
+                                placeholder="Descreva seu projeto ou dúvida..." required></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Enviar Mensagem</button>
                     </form>
