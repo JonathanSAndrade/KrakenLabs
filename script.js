@@ -50,5 +50,4 @@ const textObserver = new IntersectionObserver((entries, observer) => {
 textElements.forEach((el) => {
     textObserver.observe(el);
 });
-/*
-*/
+
