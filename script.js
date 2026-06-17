@@ -1,53 +1,93 @@
-// Efeito de scroll suave para links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
+/**
+ * KrakenLabs - Script principal
+ * Gerencia scroll animations, scroll suave, efeito magnético e preferência de movimento
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+
+    // ============================================================
+    // 1. VERIFICA PREFERÊNCIA POR MOVIMENTO REDUZIDO
+    // ============================================================
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Se o usuário prefere movimento reduzido, desativamos todas as animações
+    if (prefersReducedMotion) {
+        // Torna todos os elementos .reveal visíveis imediatamente
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        // Não executa o restante das animações
+        return;
+    }
+
+    // ============================================================
+    // 2. SCROLL REVEAL (IntersectionObserver)
+    // ============================================================
+    const revealElements = document.querySelectorAll('.reveal');
+
+    if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target); // otimização
+                }
             });
-        }
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+        // Fallback para navegadores sem suporte: exibe todos imediatamente
+        revealElements.forEach(el => el.classList.add('visible'));
+    }
+
+    // ============================================================
+    // 3. SCROLL SUAVE PARA LINKS ÂNCORA
+    // ============================================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
+
+    // ============================================================
+    // 4. EFEITO MAGNÉTICO NO BOTÃO CTA
+    // ============================================================
+    const ctaBtn = document.querySelector('.cta-button');
+    if (ctaBtn) {
+        ctaBtn.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            this.style.transform =
+                `translate(${x * 0.08}px, ${y * 0.08}px) scale(1.02)`;
+        });
+        ctaBtn.addEventListener('mouseleave', function() {
+            this.style.transform = 'translate(0, 0) scale(1)';
+        });
+    }
+
+    // ============================================================
+    // 5. PAUSA VÍDEO QUANDO ABA NÃO ESTIVER VISÍVEL (economia)
+    // ============================================================
+    const video = document.querySelector('.hero-video');
+    if (video) {
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                video.pause();
+            } else if (video.paused && video.autoplay) {
+                video.play().catch(() => {});
+            }
+        });
+    }
 });
-
-// Animação de cards ao aparecer na tela
-const serviceCards = document.querySelectorAll('.service-card, .portfolio-item, .stat-item');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, { threshold: 0.1 });
-
-serviceCards.forEach((card) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.5s, transform 0.5s';
-    observer.observe(card);
-});
-
-// Efeito visual animado para textos
-const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, span:not(.logo span)');
-textElements.forEach((el) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.7s, transform 0.7s';
-});
-
-const textObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 });
-
-textElements.forEach((el) => {
-    textObserver.observe(el);
-});
-
