@@ -88,6 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (video.paused && video.autoplay) {
                 video.play().catch(() => {});
             }
-        });
-    }
+        }); }
+    
+
+    
 });
